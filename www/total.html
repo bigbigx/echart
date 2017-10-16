@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="300"> 
+    <meta charset="utf-8">
+    <title>禅道数据展示</title>
+	
+	  <script src="./asset/js/jquery.min.js"></script>
+	  <!--Step:2 Import echarts-all.js-->
+    <!--Step:2 引入echarts-all.js-->
+	<!--
+    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+	-->
+	<!---->
+	<script src="./asset/js/echarts-all.js"></script>
+	
+	
+    <!-- 引入 echarts.js -->
+	<link rel="shortcut icon" href="./asset/ico/favicon.png">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ECharts">
+    <meta name="author" content="kener.linfeng@gmail.com">
+
+    <link rel="shortcut icon" href="./asset/ico/favicon.png">
+
+    <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./asset/css/bootstrap.css" rel="stylesheet">
+    <link href="./asset/css/carousel.css" rel="stylesheet">
+    <link href="./asset/css/echartsHome.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!--
+    <script src="./www/js/echarts.js"></script>
+    -->
+	<script src="./asset/js/codemirror.js"></script>
+    <script src="./asset/js/javascript.js"></script>
+	
+	<!--主题切换依赖的js
+	<script src="./asset/js/echartsTheme.js"></script>
+	<script src="./asset/js/echartsExample.js"></script>
+    <script src="./asset/js/echartsThemeDesigner.js"></script>
+	-->
+	
+    <link href="./asset/css/codemirror.css" rel="stylesheet">
+    <link href="./asset/css/monokai.css" rel="stylesheet">
+    
+
+ 
+
+<script>
+// 假如这是返回的数据
+var jsonData; 
+
+
+//总数
+var t_countStr = ''; 
+var t_countArr;
+
+var t_new_countStr = ''; 
+var t_new_countArr;
+
+var t_resolv_countStr = ''; 
+var t_resolv_countArr;
+
+var t_close_countStr = ''; 
+var t_close_countArr;
+
+
+//陈娟
+var cj_countStr = ''; 
+var cj_countArr;
+
+var cj_new_countStr = ''; 
+var cj_new_countArr;
+
+var cj_resolv_countStr = ''; 
+var cj_resolv_countArr;
+
+var cj_close_countStr = ''; 
+var cj_close_countArr;
+
+
+
+//王茜
+var wx_countStr = ''; 
+var wx_countArr;
+
+var wx_new_countStr = ''; 
+var wx_new_countArr;
+
+var wx_resolv_countStr = ''; 
+var wx_resolv_countArr;
+
+var wx_close_countStr = ''; 
+var wx_close_countArr;
+
+//杨倩倩
+var yqq_countStr = ''; 
+var yqq_countArr;
+
+var yqq_new_countStr = ''; 
+var yqq_new_countArr;
+
+var yqq_resolv_countStr = ''; 
+var yqq_resolv_countArr;
+
+var yqq_close_countStr = ''; 
+var yqq_close_countArr; 
+ 
+ 
+//刘燕
+var ly_countStr = ''; 
+var ly_countArr;
+
+var ly_new_countStr = ''; 
+var ly_new_countArr;
+
+var ly_resolv_countStr = ''; 
+var ly_resolv_countArr;
+
+var ly_close_countStr = ''; 
+var ly_close_countArr; 
+
+
+//李祯
+var lz_countStr = ''; 
+var lz_countArr;
+
+var lz_new_countStr = ''; 
+var lz_new_countArr;
+
+var lz_resolv_countStr = ''; 
+var lz_resolv_countArr;
+
+var lz_close_countStr = ''; 
+var lz_close_countArr; 
+
+
+
+//彭艳俊
+var pyj_countStr = ''; 
+var pyj_countArr;
+
+var pyj_new_countStr = ''; 
+var pyj_new_countArr;
+
+var pyj_resolv_countStr = ''; 
+var pyj_resolv_countArr;
+
+var pyj_close_countStr = ''; 
+var pyj_close_countArr; 
+
+
+//刘超
+var lc_countStr = ''; 
+var lc_countArr;
+
+var lc_new_countStr = ''; 
+var lc_new_countArr;
+
+var lc_resolv_countStr = ''; 
+var lc_resolv_countArr;
+
+var lc_close_countStr = ''; 
+var lc_close_countArr; 
+
+//李舒燕
+var lsy_countStr = ''; 
+var lsy_countArr;
+
+var lsy_new_countStr = ''; 
+var lsy_new_countArr;
+
+var lsy_resolv_countStr = ''; 
+var lsy_resolv_countArr;
+
+var lsy_close_countStr = ''; 
+var lsy_close_countArr; 
+
+//许媛
+var xy_countStr = ''; 
+var xy_countArr;
+
+var xy_new_countStr = ''; 
+var xy_new_countArr;
+
+var xy_resolv_countStr = ''; 
+var xy_resolv_countArr;
+
+var xy_close_countStr = ''; 
+var xy_close_countArr; 
+
+
+//徐爽
+var xs_countStr = ''; 
+var xs_countArr;
+
+var xs_new_countStr = ''; 
+var xs_new_countArr;
+
+var xs_resolv_countStr = ''; 
+var xs_resolv_countArr;
+
+var xs_close_countStr = ''; 
+var xs_close_countArr; 
+
+
+//其他人
+var o_countStr = ''; 
+var o_countArr;
+
+var o_new_countStr = ''; 
+var o_new_countArr;
+
+var o_resolv_countStr = ''; 
+var o_resolv_countArr;
+
+var o_close_countStr = ''; 
+var o_close_countArr; 
+ 
+
+//function getData(){
+    
+ $.ajax({
+                type:'get',
+                //url: "bar.php",
+				url: "total.php",
+                //dataType: "json",
+                success: function (data) {
+                   jsonData =  eval(data);
+				   
+				  //alert(jsonData); //对象
+				//alert(data); //字符串
+                 initTable(data);
+				 //initTable(jsonData);
+				pic();				 
+                }
+            });
+			
+			
+			
+//}
+
+
+
+   function initTable () {
+    	$('#treeList').empty();
+        var html = '<table border=1 style="width:75%">';
+
+        html += '<tr style="text-align:center;font-weight:bold;height:30px"><td>姓名</td><td>新建bug数</td><td>解决bug数</td><td>关闭bug数</td><td>bug总数</td>';
+        for (var j in jsonData) {
+            var obj = jsonData[j];
+            html += '<tr style="text-align:center;height:30px">'
+			//总数统计
+			html += '<td>' + '总数' + '</td>';
+            html += '<td>' + obj.t_new_count + '</td>';
+			html += '<td>' + obj.t_resolv_count + '</td>';
+            html += '<td>' + obj.t_close_count + '</td>';
+			html += '<td>' + obj.t_count + '</td>';
+            html += '</tr>'
+			//陈娟
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '陈娟' + '</td>';
+            html += '<td>' + obj.cj_new_count + '</td>';
+			html += '<td>' + obj.cj_resolv_count + '</td>';
+            html += '<td>' + obj.cj_close_count + '</td>';
+			html += '<td>' + obj.cj_count + '</td>';
+            html += '</tr>'
+			//王茜
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '王茜' + '</td>';
+            html += '<td>' + obj.wx_new_count + '</td>';
+			html += '<td>' + obj.wx_resolv_count + '</td>';
+            html += '<td>' + obj.wx_close_count + '</td>';
+			html += '<td>' + obj.wx_count + '</td>';
+            html += '</tr>'
+			//杨倩倩
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '杨倩倩' + '</td>';
+            html += '<td>' + obj.yqq_new_count + '</td>';
+			html += '<td>' + obj.yqq_resolv_count + '</td>';
+            html += '<td>' + obj.yqq_close_count + '</td>';
+			html += '<td>' + obj.yqq_count + '</td>';
+            html += '</tr>'
+			//刘燕
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '刘燕' + '</td>';
+            html += '<td>' + obj.ly_new_count + '</td>';
+			html += '<td>' + obj.ly_resolv_count + '</td>';
+            html += '<td>' + obj.ly_close_count + '</td>';
+			html += '<td>' + obj.ly_count + '</td>';
+            html += '</tr>'			
+			//李祯
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '李祯' + '</td>';
+            html += '<td>' + obj.lz_new_count + '</td>';
+			html += '<td>' + obj.lz_resolv_count + '</td>';
+            html += '<td>' + obj.lz_close_count + '</td>';
+			html += '<td>' + obj.lz_count + '</td>';
+            html += '</tr>'
+			//彭艳俊
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '彭艳俊' + '</td>';
+            html += '<td>' + obj.pyj_new_count + '</td>';
+			html += '<td>' + obj.pyj_resolv_count + '</td>';
+            html += '<td>' + obj.pyj_close_count + '</td>';
+			html += '<td>' + obj.pyj_count + '</td>';
+            html += '</tr>'
+			//刘超
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '刘超' + '</td>';
+            html += '<td>' + obj.lc_new_count + '</td>';
+			html += '<td>' + obj.lc_resolv_count + '</td>';
+            html += '<td>' + obj.lc_close_count + '</td>';
+			html += '<td>' + obj.lc_count + '</td>';
+            html += '</tr>'
+			//李舒燕
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '李舒燕' + '</td>';
+            html += '<td>' + obj.lsy_new_count + '</td>';
+			html += '<td>' + obj.lsy_resolv_count + '</td>';
+            html += '<td>' + obj.lsy_close_count + '</td>';
+			html += '<td>' + obj.lsy_count + '</td>';
+            html += '</tr>'
+			//许媛
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '许媛' + '</td>';
+            html += '<td>' + obj.xy_new_count + '</td>';
+			html += '<td>' + obj.xy_resolv_count + '</td>';
+            html += '<td>' + obj.xy_close_count + '</td>';
+			html += '<td>' + obj.xy_count + '</td>';
+            html += '</tr>'
+			//徐爽
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '徐爽' + '</td>';
+            html += '<td>' + obj.xs_new_count + '</td>';
+			html += '<td>' + obj.xs_resolv_count + '</td>';
+            html += '<td>' + obj.xs_close_count + '</td>';
+			html += '<td>' + obj.xs_count + '</td>';
+            html += '</tr>'
+			//其他人
+			html += '<tr style="text-align:center;height:30px">'
+			html += '<td>' + '其他人' + '</td>';
+            html += '<td>' + obj.o_new_count + '</td>';
+			html += '<td>' + obj.o_resolv_count + '</td>';
+            html += '<td>' + obj.o_close_count + '</td>';
+			html += '<td>' + obj.o_count + '</td>';
+            html += '</tr>'
+			
+			
+			//总数
+			t_new_countStr += obj.t_new_count+",";
+			t_resolv_countStr += obj.t_resolv_count+","; 			
+			t_close_countStr += obj.t_close_count+",";
+			t_countStr += obj.t_count+","; 
+
+			//陈娟
+			cj_new_countStr += obj.cj_new_count+",";
+			cj_resolv_countStr += obj.cj_resolv_count+","; 			
+			cj_close_countStr += obj.cj_close_count+",";
+			cj_countStr += obj.cj_count+","; 
+
+
+			//王茜
+			wx_new_countStr += obj.wx_new_count+",";
+			wx_resolv_countStr += obj.wx_resolv_count+","; 			
+			wx_close_countStr += obj.wx_close_count+",";
+			wx_countStr += obj.wx_count+","; 	
+
+	        //杨倩倩
+			yqq_new_countStr += obj.yqq_new_count+",";
+			yqq_resolv_countStr += obj.yqq_resolv_count+","; 			
+			yqq_close_countStr += obj.yqq_close_count+",";
+			yqq_countStr += obj.yqq_count+","; 	
+
+
+            //刘燕
+			ly_new_countStr += obj.ly_new_count+",";
+			ly_resolv_countStr += obj.ly_resolv_count+","; 			
+			ly_close_countStr += obj.ly_close_count+",";
+			ly_countStr += obj.ly_count+","; 				
+			
+			//李祯
+			lz_new_countStr += obj.lz_new_count+",";
+			lz_resolv_countStr += obj.lz_resolv_count+","; 			
+			lz_close_countStr += obj.lz_close_count+",";
+			lz_countStr += obj.lz_count+","; 
+			
+			//彭艳俊
+			pyj_new_countStr += obj.pyj_new_count+",";
+			pyj_resolv_countStr += obj.pyj_resolv_count+","; 			
+			pyj_close_countStr += obj.pyj_close_count+",";
+			pyj_countStr += obj.pyj_count+",";
+			
+			//刘超
+			lc_new_countStr += obj.lc_new_count+",";
+			lc_resolv_countStr += obj.lc_resolv_count+","; 			
+			lc_close_countStr += obj.lc_close_count+",";
+			lc_countStr += obj.lc_count+",";
+			
+			//李舒燕
+			lsy_new_countStr += obj.lsy_new_count+",";
+			lsy_resolv_countStr += obj.lsy_resolv_count+","; 			
+			lsy_close_countStr += obj.lsy_close_count+",";
+			lsy_countStr += obj.lsy_count+",";
+			
+			//许媛
+			xy_new_countStr += obj.xy_new_count+",";
+			xy_resolv_countStr += obj.xy_resolv_count+","; 			
+			xy_close_countStr += obj.xy_close_count+",";
+			xy_countStr += obj.xy_count+",";
+			
+		    //徐爽
+			xs_new_countStr += obj.xs_new_count+",";
+			xs_resolv_countStr += obj.xs_resolv_count+","; 			
+			xs_close_countStr += obj.xs_close_count+",";
+			xs_countStr += obj.xs_count+",";
+					   
+		    //其他人
+			o_new_countStr += obj.o_new_count+",";
+			o_resolv_countStr += obj.o_resolv_count+","; 			
+			o_close_countStr += obj.o_close_count+",";
+			o_countStr += obj.o_count+",";
+			
+			} 
+		 		
+//		t_countStr = t_countStr.substring(0,t_countStr.length-1);
+//		t_new_countStr = t_new_countStr.substring(0,t_new_countStr.length-1);
+//		t_resolv_countStr = t_resolv_countStr.substring(0,t_resolv_countStr.length-1);
+//		t_close_countStr = t_close_countStr.substring(0,t_close_countStr.length-1);
+		
+        html += '</table>';
+
+        $('#treeList').append(html);
+    }
+	
+	 //getData();
+ //setInterval(getData,10000);	 
+    </script>
+	
+	
+</head>
+<body>
+<div class="row-fluid example">
+<div style="font-size:30px;font-weight:bold;padding-top:20px;padding-left:20px;">禅道数据实时展示</div>
+<div style="font-size:20px;padding-top:10px;padding-left:20px;color:#008ACD">bug统计</div>
+</div>
+
+    <!--Step:1 为ECharts准备一个具备大小（宽高）的Dom padding:居上px 右px 下px 左px-->
+    <div id="main" style="height:500px;border:0px solid #ccc;padding:10px;width:80%"></div>
+
+ <style>
+	 html {
+     background-color:#F7F7F7;  
+     }
+	</style>   
+	
+	
+    <script> 
+
+
+
+	
+function pic(){
+
+//新建
+			var t_new = (function (){
+						//t_new_countArr = t_new_countStr.split(","); 
+						t_new_countArr = t_new_countStr.replace(",", "");
+						return t_new_countArr;
+					})()
+					
+			var cj_new = (function (){
+						//cj_new_countArr = cj_new_countStr.split(",");
+						cj_new_countArr = cj_new_countStr.replace(",", "");						
+						return cj_new_countArr;
+					})()
+					
+			var wx_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						wx_new_countArr = wx_new_countStr.replace(",", "");						
+						return wx_new_countArr;
+					})()
+   
+	        var yqq_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						yqq_new_countArr = yqq_new_countStr.replace(",", "");						
+						return yqq_new_countArr;
+					})()
+
+	        var ly_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						ly_new_countArr = ly_new_countStr.replace(",", "");						
+						return ly_new_countArr;
+					})()  					
+   
+	        var lz_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lz_new_countArr = lz_new_countStr.replace(",", "");						
+						return lz_new_countArr;
+					})()  	
+ 
+	        var pyj_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						pyj_new_countArr = pyj_new_countStr.replace(",", "");						
+						return pyj_new_countArr;
+					})()   
+					
+			
+	        var lc_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lc_new_countArr = lc_new_countStr.replace(",", "");						
+						return lc_new_countArr;
+					})()  
+
+			var lsy_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lsy_new_countArr = lsy_new_countStr.replace(",", "");						
+						return lsy_new_countArr;
+					})()  						
+
+	        var xy_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xy_new_countArr = xy_new_countStr.replace(",", "");						
+						return xy_new_countArr;
+					})()					
+					
+	        var xs_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xs_new_countArr = xs_new_countStr.replace(",", "");						
+						return xs_new_countArr;
+					})()   
+
+	        var o_new = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						o_new_countArr = o_new_countStr.replace(",", "");						
+						return o_new_countArr;
+					})()  
+					
+ 
+ //解决
+			var t_resolv = (function (){
+						//t_new_countArr = t_new_countStr.split(","); 
+						t_resolv_countArr = t_resolv_countStr.replace(",", "");
+						return t_resolv_countArr;
+					})()
+					
+			var cj_resolv = (function (){
+						//cj_new_countArr = cj_new_countStr.split(",");
+						cj_resolv_countArr = cj_resolv_countStr.replace(",", "");						
+						return cj_resolv_countArr;
+					})()
+					
+			var wx_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						wx_resolv_countArr = wx_resolv_countStr.replace(",", "");						
+						return wx_resolv_countArr;
+					})()
+   
+	        var yqq_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						yqq_resolv_countArr = yqq_resolv_countStr.replace(",", "");						
+						return yqq_resolv_countArr;
+					})()
+
+	        var ly_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						ly_resolv_countArr = ly_resolv_countStr.replace(",", "");						
+						return ly_resolv_countArr;
+					})()  					
+   
+	        var lz_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lz_resolv_countArr = lz_resolv_countStr.replace(",", "");						
+						return lz_resolv_countArr;
+					})()  	
+ 
+	        var pyj_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						pyj_resolv_countArr = pyj_resolv_countStr.replace(",", "");						
+						return pyj_resolv_countArr;
+					})()   
+
+			var lc_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lc_resolv_countArr = lc_resolv_countStr.replace(",", "");						
+						return lc_resolv_countArr;
+					})()   		
+
+			var lsy_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lsy_resolv_countArr = lsy_resolv_countStr.replace(",", "");						
+						return lsy_resolv_countArr;
+					})()  
+			
+	        var xy_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xy_resolv_countArr = xy_resolv_countStr.replace(",", "");						
+						return xy_resolv_countArr;
+					})() 
+					
+	        var xs_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xs_resolv_countArr = xs_resolv_countStr.replace(",", "");						
+						return xs_resolv_countArr;
+					})()   
+
+	        var o_resolv = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						o_resolv_countArr = o_resolv_countStr.replace(",", "");						
+						return o_resolv_countArr;
+					})()  
+ 
+
+
+//关闭
+			var t_close = (function (){
+						//t_new_countArr = t_new_countStr.split(","); 
+						t_close_countArr = t_close_countStr.replace(",", "");
+						return t_close_countArr;
+					})()
+					
+			var cj_close = (function (){
+						//cj_new_countArr = cj_new_countStr.split(",");
+						cj_close_countArr = cj_close_countStr.replace(",", "");						
+						return cj_close_countArr;
+					})()
+					
+			var wx_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						wx_close_countArr = wx_close_countStr.replace(",", "");						
+						return wx_close_countArr;
+					})()
+   
+	        var yqq_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						yqq_close_countArr = yqq_close_countStr.replace(",", "");						
+						return yqq_close_countArr;
+					})()
+
+	        var ly_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						ly_close_countArr = ly_close_countStr.replace(",", "");						
+						return ly_close_countArr;
+					})()  					
+   
+	        var lz_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lz_close_countArr = lz_close_countStr.replace(",", "");						
+						return lz_close_countArr;
+					})()  	
+ 
+	        var pyj_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						pyj_close_countArr = pyj_close_countStr.replace(",", "");						
+						return pyj_close_countArr;
+					})()   
+
+	        var lc_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lc_close_countArr = lc_close_countStr.replace(",", "");						
+						return lc_close_countArr;
+					})() 					
+
+	        var lsy_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lsy_close_countArr = lsy_close_countStr.replace(",", "");						
+						return lsy_close_countArr;
+					})() 	
+
+	        var xy_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xy_close_countArr = xy_close_countStr.replace(",", "");						
+						return xy_close_countArr;
+					})()					
+			
+	        var xs_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xs_close_countArr = xs_close_countStr.replace(",", "");						
+						return xs_close_countArr;
+					})()
+
+	        var o_close = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						o_close_countArr = o_close_countStr.replace(",", "");						
+						return o_close_countArr;
+					})()  
+
+ 
+ 
+ //总数
+			var t_count = (function (){
+						//t_new_countArr = t_new_countStr.split(","); 
+						t_countArr = t_countStr.replace(",", "");
+						return t_countArr;
+					})()
+					
+			var cj_count = (function (){
+						//cj_new_countArr = cj_new_countStr.split(",");
+						cj_countArr = cj_countStr.replace(",", "");						
+						return cj_countArr;
+					})()
+					
+			var wx_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						wx_countArr = wx_countStr.replace(",", "");						
+						return wx_countArr;
+					})()
+   
+	        var yqq_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						yqq_countArr = yqq_countStr.replace(",", "");						
+						return yqq_countArr;
+					})()
+
+	        var ly_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						ly_countArr = ly_countStr.replace(",", "");						
+						return ly_countArr;
+					})()  					
+   
+	        var lz_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lz_countArr = lz_countStr.replace(",", "");						
+						return lz_countArr;
+					})()  	
+ 
+	        var pyj_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						pyj_countArr = pyj_countStr.replace(",", "");						
+						return pyj_countArr;
+					})()   
+
+	        var lc_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lc_countArr = lc_countStr.replace(",", "");						
+						return lc_countArr;
+					})()  					
+
+	        var lsy_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						lsy_countArr = lsy_countStr.replace(",", "");						
+						return lsy_countArr;
+					})() 
+
+	        var xy_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xy_countArr = xy_countStr.replace(",", "");						
+						return xy_countArr;
+					})() 
+					
+	        var xs_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						xs_countArr = xs_countStr.replace(",", "");						
+						return xs_countArr;
+					})()   
+
+	        var o_count = (function (){
+						//wx_new_countArr = wx_new_countStr.split(",");
+						o_countArr = o_countStr.replace(",", "");						
+						return o_countArr;
+					})()  
+ 
+ 
+ 
+        var myChart = echarts.init(document.getElementById('main'));
+		
+		
+        myChart.setOption({
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+			   data:['新建bug数','解决bug数','关闭bug数','bug总数']
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['总数','陈娟','王茜','杨倩倩','刘燕','李祯','彭艳俊','刘超','李舒燕','许媛','徐爽','其他人']
+                }
+            ],
+			yAxis : [
+                {
+                    type : 'value',
+					name : '数量',
+                    splitArea : {show : true}
+                }
+            ],
+            series : [
+                {
+                    name:'新建bug数',
+                    //type:'bar',
+                    type:'bar',
+					itemStyle : { normal: {label : {show: true}}}, //柱状图顶点数值
+                    data:[t_new,cj_new,wx_new,yqq_new,ly_new,lz_new,pyj_new,lc_new,lsy_new,xy_new,xs_new,o_new]
+                },
+				{
+                    name:'解决bug数',
+                    //type:'bar',
+                    type:'bar',
+					itemStyle : { normal: {label : {show: true}}},
+                    data:[t_resolv,cj_resolv,wx_resolv,yqq_resolv,ly_resolv,lz_resolv,pyj_resolv,lc_resolv,lsy_resolv,xy_resolv,xs_resolv,o_resolv]
+                },
+				{
+                    name:'关闭bug数',
+                    //type:'bar',
+                    type:'bar',
+					itemStyle : { normal: {label : {show: true}}},
+                    data:[t_close,cj_close,wx_close,yqq_close,ly_close,lz_close,pyj_close,lc_close,lsy_close,xy_close,xs_close,o_close]
+                },
+				{
+                    name:'bug总数',
+                    type:'bar',
+					itemStyle : { normal: {label : {show: true}}},
+                    data:[t_count,cj_count,wx_count,yqq_count,ly_count,lz_count,pyj_count,lc_count,lsy_count,xy_count,xs_count,o_count]
+                }
+            ]
+        });
+        }
+    </script>
+
+	
+	
+	
+ </div><!--/.well -->
+            </div><!--/span-->
+			
+<!--			
+            <div id="graphic" class="col-md-8">
+                <div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="refresh(true)">刷 新</button>
+                    <span class="text-primary">切换主题</span>
+                    <select id="theme-select"></select>
+-->
+                    <span id='wrong-message' style="color:red"></span>
+                </div>
+            </div><!--/span-->
+			
+			
+			
+        </div><!--/row-->
+        
+        </div><!--/.fluid-container-->
+ 
+ 
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./asset/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./asset/js/echartsHome.js"></script>
+    <script src="./asset/js/bootstrap.min.js"></script>
+    <script type="text/javascript">var timeTicket;</script>
+    <script src="./asset/js/echartsExample.js"></script>	
+	
+	
+	<!--
+	<div style="padding-top:30px;padding-left:30px;"></div>
+    -->
+	
+	
+	<!--表格 style padding:居上px 右px 下px 左px-->
+	<div id="treeList" style="padding:10px 10px 10px 90px" class="container-fluid" ></div>
+
+	
+  
+</body>
+</html>

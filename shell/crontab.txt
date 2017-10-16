@@ -1,0 +1,4 @@
+crontab -l
+
+00 15 * * 5 sh /opt/gitscrfile/getgitinfo.sh > /dev/null 2>&1
+00 16 * * 5 sh /opt/gitscrfile/tomysql.sh /dev/null 2>&1
